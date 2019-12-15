@@ -1,0 +1,55 @@
+
+
+
+
+
+
+
+<div class="container my-5">
+    <div *ngIf="authService.error">
+        <p class="text-center "><span class="alert alert-danger animated bounceIn">{{authService.error}}</span></p>
+    </div>
+  <div class="row justify-content-center ">
+      
+      <form style="border-radius: 2em;" class="text-center shadow-5 z-depth-5  border border-light p-5" action="#!" (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
+
+          <p class="h4 mb-4">Inscreva-se</p>
+      
+          <p class="text-center">Criar conta com email e password</p>
+      
+         
+          
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+                <input type="email" name="email" formControlName="email" class="form-control mb-4" placeholder="Email">
+            </div>
+          </div>
+
+
+          <div class="form-row">
+              <div class="form-group col-lg-12">
+                  <input type="password" name="password" formControlName="password" class="form-control mb-4" placeholder="Senha">
+              </div>
+            </div>
+      
+          
+         
+      
+          
+          <button class="btn btn-info btn-block my-2" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+      
+          <div class="container footer pt-3 bg-danger lighten-3">
+              <div class="row mt-2 mb-3 d-flex justify-content-center">
+                  
+                  
+                  <a routerLink="signin" class="fa-lg p-2 m-2 tw-ic white-text">Entrar</a>
+                  <a routerLink="passwordless" class="fa-lg p-2 m-2 tw-ic"> <i class="fas fa-envelope white-text fa-lg"></i></a>
+                  <a (click)="signinGoogle()" class="fa-lg p-2 m-2 gplus-ic"><i class="fab fa-google white-text fa-lg"> </i></a>
+                </div>
+          </div>
+      </form>
+      
+  </div>
+</div>
+
+

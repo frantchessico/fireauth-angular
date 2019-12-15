@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="my-5 row justify-content-center ">
+      <div *ngIf="authService.user | async as user">
+          <h6 class="h1-responsive text-center">Seja bem vindo, {{ user }}!</h6>
+        
+        </div>
+  </div>
+    <img class="img-responsive img-fluid" src="../../assets/undraw_having_fun_iais.svg" />
+
+
+    
+    
+</div>

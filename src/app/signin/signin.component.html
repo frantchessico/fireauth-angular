@@ -1,0 +1,46 @@
+<div class="container my-5">
+
+    <div *ngIf="authService.error">
+        <p class="text-center "><span class="alert alert-danger animated bounceIn">{{authService.error}}</span></p>
+    </div>
+<div class="row justify-content-center">
+  
+    
+    <form (ngSubmit)="signin(signinForm.value)" [formGroup]="signinForm" style="border-radius: 2em;" class="text-center shadow-5 z-depth-5  border border-light p-5">
+        <p class="text-center">Faça login com email e senha!</p>
+        
+      <div class="form-row">
+
+        <div class="form-group col-lg-12">
+            
+            <input placeholder="Seu email" type="email" name="email" formControlName="email" class="form-control mb-4">
+        </div>
+      </div>
+
+      <div class="form-row">
+          <div class="form-group col-lg-12">
+              
+      <input placeholder="Sua senha" type="password" name="password" formControlName="password" class="form-control mb-4">
+          </div>
+        </div>
+  
+      
+    
+      <input type="submit" class="btn btn-primary" [disabled]="!signinForm.valid" value="Entrar">
+      <div class="container footer pt-3 lighten-3">
+          <div class="row mt-2 mb-3 d-flex justify-content-center">
+              
+              
+              <a routerLink="/" class="fa-lg p-2 m-2 tw-ic dark-text">Criar conta</a>
+              
+            </div>
+      </div>
+    </form> 
+  
+    
+    
+  
+  
+  
+</div>
+</div>
